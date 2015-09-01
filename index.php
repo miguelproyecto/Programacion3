@@ -1,23 +1,14 @@
 <html>
 	<head>
+		<title>Env&iacute;o por GET</title>
 	</head>
 	<body>
-		<?php
-
-			require_once"Clases/empleado.php";
-			require_once"Clases/fabrica.php";
-
-			$empleado1=new empleado("pepe","jaun",12,1000,5000);
-			//$mostrar=$empleado1->ToString();
-			//echo $mostrar;
-			$fabrica=new fabrica("pepe","jaun",12,15,5000,"acme");
-			$mostrar=$fabrica->ToString();
-			echo $mostrar;
-			$empleado1->setsueldo(12);
-			echo $fabrica->calcularsalario();
-			
-			//echo $empleado1->hablar("portugues");
-
-		?>
+		<form action="administracion.php" method="post">
+			Nombre:<input type="text" name="txtNombre" />
+			<br/>
+			Edad:<input type="text" name="txtEdad" />
+			<br/>
+			<input type="submit" value="Enviar por GET" />
+		</form>
 	</body>
 </html>

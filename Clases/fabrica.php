@@ -3,14 +3,14 @@
 * 
 */
  require_once"Clases/empleado.php";
-class fabrica extends empleado
+class fabrica 
 {
 	private $_razonSocial;
-	private $_arrayEmpleado;
+	private $_arrayEmpleado=array();
 
-	public function __construct($nombre,$apellido,$dni,$valor1,$valor2,$razon)
+	public function __construct($razon)
 	{
-		parent::__construct($nombre,$apellido,$dni,$valor1,$valor2);
+		//parent::__construct($nombre,$apellido,$dni,$valor1,$valor2);
 		$this->_razonSocial=$razon;
 	}
 	function contactos()
@@ -19,7 +19,8 @@ class fabrica extends empleado
 	}
 	function agregarPersona($per)
 	{
-
+		
+		array_push($_arrayEmpleado, $per);
 	}
 	function calcularsalario()
 	{
@@ -31,7 +32,10 @@ class fabrica extends empleado
 	}
 	function ToString()
 	{
-		return parent::ToString()."-".$this->_razonSocial;
+		//return $this->_razonSocial;
+		for ($i=0; $i <count($_arrayEmpleado) ; $i++) { 
+			echo "indice".$i."-".$_arrayEmpleado[$i]."<br>";
+		}
 	}
 }
 
